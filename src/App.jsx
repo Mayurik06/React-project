@@ -3,7 +3,7 @@ import Navabar from "./components/Navabar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -48,6 +48,7 @@ function App() {
      
           <Routes>
             <Route path="/about" element={<About mode={mode} />} />
+            <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<TextForm mode={mode} />} />
           </Routes>
     
